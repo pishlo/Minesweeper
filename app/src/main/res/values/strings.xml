@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Minesweeper</string>
+    <string name="mines_0">Mines: 0</string>
+    <string name="reset">Reset</string>
+    <string name="minesweeper">Minesweeper</string>
+    <string name="easy_1_mine">Easy (1 mine)</string>
+    <string name="medium_3_mines">Medium (3 mines)</string>
+    <string name="hard_5_mines">Hard (5 mines)</string>
+    <string name="custom">Custom</string>
+    <string name="cash_out">💰 Cash Out</string>
+    <string name="gems_0">Gems: 0</string>
+    <string name="change_difficulty">Change Difficulty</string>
+    <string name="change">Change</string>
+    <string name="gems_100">Gems: 100</string>
+    <string name="enter_bet">Enter bet</string>
+    <string name="place_bet">Place Bet</string>
+</resources>
