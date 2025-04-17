@@ -289,6 +289,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+
     private void updateGemCounter() {
         gemCounter.setText(String.format("Gems: %.2f", totalGems));
     }

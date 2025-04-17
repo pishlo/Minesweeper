@@ -47,6 +47,22 @@ public class StartActivity extends AppCompatActivity {
         mediumButton.setOnClickListener(v -> startGame(3));
         hardButton.setOnClickListener(v -> startGame(5));
         customButton.setOnClickListener(v -> showCustomInputDialog());
+
+        Button logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(v -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Log Out")
+                    .setMessage("Are you sure you want to log out?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        // Simply redirect to LoginActivity and clear the back stack
+                        Intent logoutintent = new Intent(StartActivity.this, LoginActivity.class);
+                        logoutintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(logoutintent);
+                        finish();
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+        });
     }
 
     private void startGame(int mineCount) {

@@ -1,93 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/startLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp"
     android:background="@color/dark_background">
 
-    <!-- Game Title -->
-    <TextView
-        android:id="@+id/welcomeText"
+    <!-- Logout Button (Top Right) -->
+    <Button
+        android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:text="@string/minesweeper"
-        android:textColor="@color/accent_purple"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+        android:layout_alignParentEnd="true"
+        android:layout_margin="35dp"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"
+        android:drawableLeft="@android:drawable/ic_lock_power_off"
+        android:drawableTint="@android:color/white"
+        android:padding="12dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
 
-    <!-- User Info -->
+    <!-- Main Content (Centered) -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginBottom="32dp"
-        android:background="@color/surface_dark"
-        android:padding="16dp"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp">
+        android:padding="32dp">
 
+        <!-- Game Title -->
         <TextView
-            android:id="@+id/usernameView"
+            android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome!"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/text_primary" />
+            android:layout_marginBottom="48dp"
+            android:text="@string/minesweeper"
+            android:textColor="@color/accent_purple"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/gemsView"
+        <!-- User Info -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gems: 100.00"
-            android:textSize="24sp"
-            android:textColor="@color/gems_color"
-            android:layout_marginTop="8dp" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"
+            android:background="@color/surface_dark"
+            android:padding="16dp"
+            android:paddingHorizontal="32dp">
+
+            <TextView
+                android:id="@+id/usernameView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome!"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/gemsView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gems: 100.00"
+                android:textSize="24sp"
+                android:textColor="@color/gems_color"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Difficulty Buttons -->
+        <Button
+            android:id="@+id/easyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/easy_1_mine"
+            android:backgroundTint="@color/primary_blue"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/mediumButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medium_3_mines"
+            android:backgroundTint="@color/primary_blue"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/hardButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hard_5_mines"
+            android:backgroundTint="@color/primary_blue"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/customButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/custom"
+            android:backgroundTint="@color/primary_purple"
+            android:textColor="@android:color/white"
+            style="@style/Widget.MaterialComponents.Button"/>
     </LinearLayout>
-
-    <!-- Difficulty Buttons -->
-    <Button
-        android:id="@+id/easyButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/easy_1_mine"
-        android:backgroundTint="@color/primary_blue"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        style="@style/Widget.MaterialComponents.Button"/>
-
-    <Button
-        android:id="@+id/mediumButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/medium_3_mines"
-        android:backgroundTint="@color/primary_blue"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        style="@style/Widget.MaterialComponents.Button"/>
-
-    <Button
-        android:id="@+id/hardButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hard_5_mines"
-        android:backgroundTint="@color/primary_blue"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        style="@style/Widget.MaterialComponents.Button"/>
-
-    <Button
-        android:id="@+id/customButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/custom"
-        android:backgroundTint="@color/primary_purple"
-        android:textColor="@android:color/white"
-        style="@style/Widget.MaterialComponents.Button"/>
-</LinearLayout>
+</RelativeLayout>
