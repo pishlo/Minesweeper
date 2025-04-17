@@ -89,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 tile.setMinimumWidth(0);
                 tile.setPadding(0, 0, 0, 0);
                 tile.setTextSize(16);
-                tile.setBackgroundColor(Color.parseColor("#DDDDDD"));
+                // Update background and text color
+                tile.setBackgroundColor(getResources().getColor(R.color.surface_light));
+                tile.setTextColor(getResources().getColor(R.color.text_primary));
 
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
                 params.width = 130;
@@ -109,13 +111,17 @@ public class MainActivity extends AppCompatActivity {
                     cell.isRevealed = true;
                     Button clickedTile = buttons[r][c];
                     clickedTile.setEnabled(false);
+                    clickedTile.setBackgroundColor(getResources().getColor(R.color.surface_dark)); // Slightly darker when revealed
 
                     if (cell.hasMine) {
+                        clickedTile.setText("\uD83D\uDCA3");
+                        clickedTile.setTextColor(getResources().getColor(R.color.error_red));
                         gameOver = true;
                         revealAllMines();
                         showGameOverDialog();
                     } else {
                         clickedTile.setText("\uD83D\uDC8E");
+                        clickedTile.setTextColor(getResources().getColor(R.color.gems_color)); // Gem color
                         safeTilesRevealed++;
                         updateMultiplier();
 
@@ -217,6 +223,8 @@ public class MainActivity extends AppCompatActivity {
                 Button tile = buttons[row][col];
                 tile.setText("");
                 tile.setEnabled(true);
+                tile.setBackgroundColor(getResources().getColor(R.color.surface_light));
+                tile.setTextColor(getResources().getColor(R.color.text_primary));
             }
         }
 
@@ -239,7 +247,10 @@ public class MainActivity extends AppCompatActivity {
                 Cell cell = cells[row][col];
                 Button tile = buttons[row][col];
                 tile.setEnabled(false);
-                if (cell.hasMine) tile.setText("\uD83D\uDCA3");
+                if (cell.hasMine) {
+                    tile.setText("\uD83D\uDCA3");
+                    tile.setTextColor(getResources().getColor(R.color.error_red)); // Make mines stand out
+                }
             }
         }
     }
